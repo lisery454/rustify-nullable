@@ -10,7 +10,14 @@
         "module": "ESNext",
         // "module": "nodenext",
         "target": "esnext",
-        "types": [],
+        "types": [
+            "vitest/globals"
+        ],
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
         // For nodejs:
         // "lib": ["esnext"],
         // "types": ["node"],

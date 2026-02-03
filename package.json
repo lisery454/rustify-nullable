@@ -11,7 +11,9 @@
     "scripts": {
         "dev": "tsup src/index.ts --watch --format esm,cjs",
         "build": "tsup src/index.ts --format esm,cjs --dts --clean",
-        "lint": "eslint src"
+        "lint": "eslint src",
+        "test": "vitest run",
+        "test:coverage": "vitest run --coverage"
     },
     "type": "module",
     "keywords": [],
@@ -19,7 +21,11 @@
     "license": "ISC",
     "packageManager": "pnpm@10.25.0",
     "devDependencies": {
+        "@types/node": "^25.2.0",
+        "@vitest/coverage-v8": "^4.0.18",
+        "prettier": "^3.8.1",
         "tsup": "^8.5.1",
-        "typescript": "^5.9.3"
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.18"
     }
 }
