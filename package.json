@@ -1,0 +1,25 @@
+{
+    "name": "rustify-nullable",
+    "version": "1.0.0",
+    "description": "rust style Result and Option",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "tsup src/index.ts --watch --format esm,cjs",
+        "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+        "lint": "eslint src"
+    },
+    "type": "module",
+    "keywords": [],
+    "author": "Lisery",
+    "license": "ISC",
+    "packageManager": "pnpm@10.25.0",
+    "devDependencies": {
+        "tsup": "^8.5.1",
+        "typescript": "^5.9.3"
+    }
+}
