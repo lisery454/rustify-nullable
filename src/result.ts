@@ -1,3 +1,5 @@
+import { none, some, type Option } from '@/index'
+
 class BaseResult<T, E> {
 	public isOk(): this is Ok<T, E> {
 		return 'data' in this
@@ -52,6 +54,14 @@ class BaseResult<T, E> {
 			return whenOk(this.data)
 		} else {
 			return whenErr((this as unknown as Err<T, E>).err)
+		}
+	}
+
+	public toOption(): Option<T> {
+		if (this.isOk()) {
+			return some(this.data)
+		} else {
+			return none()
 		}
 	}
 }

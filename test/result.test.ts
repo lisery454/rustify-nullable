@@ -92,4 +92,14 @@ describe('result', () => {
 		let b = wrap(f2)
 		expect(b.isOk()).toBe(false)
 	})
+
+	test('toOption', () => {
+		let a: Result<number> = ok(1)
+		let b = a.toOption()
+		expect(b.isSome()).toBe(true)
+		expect(b.unwrap()).toBe(1)
+		a = err(new Error())
+		b = a.toOption()
+		expect(b.isNone()).toBe(true)
+	})
 })
